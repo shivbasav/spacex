@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import IndividualMission from "./IndividualMission";
 
 const Missions = () => {
-  const api_call = async () => {
-    const url = "https://api.spacexdata.com/v3/launches?limit=100";
-    const request = axios.get(url);
-    const response = await request;
+  const [launch, setLaunch] = useState(null);
 
-    console.log(response);
+  const url = "https://api.spacexdata.com/v3/launches?limit=100";
+  const fetchData = async () => {
+    const response = await axios.get(url);
+
+    setLaunch(response.data);
   };
 
-  return <IndividualMission api_call={api_call} />;
+  return (
+    <>
+      <div>
+        <button className="button is-info" onClick={fetchData}>
+          Fetch Launches
+        </button>
+      </div>
+      {launch &&
+        launch.map((rocket) => {
+          return (
+            <>
+              <IndividualMission rocket={rocket} />
+            </>
+          );
+        })}
+    </>
+  );
 };
 export default Missions;

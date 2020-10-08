@@ -1,7 +1,9 @@
 import React from "react";
+import { Column } from "rbx";
+import MissionView from "./MissionView";
 
-const IndividualMission = (props) => {
-  console.log(props.api_call);
+const IndividualMission = (rocket) => {
+  console.log("rocket", rocket);
   return (
     //   <div className="columns">
     //     <div className="tile is-ancestor">
@@ -16,20 +18,18 @@ const IndividualMission = (props) => {
     //       </div>
     //     </div>
     //   </div>
-    <div className="columns is-4" style={{ paddingTop: "1rem" }}>
-      <div className="column is-one-quarter">
-        <p className="has-background-white">No Gap</p>
-      </div>
-      <div className="column is-one-quarter">
-        <p className="has-background-white">No Gap</p>
-      </div>
-      <div className="column is-one-quarter">
-        <p className="has-background-white">No Gap</p>
-      </div>
-      <div className="column is-one-quarter">
-        <p className="has-background-white">No Gap</p>
-      </div>
-    </div>
+    <>
+      {/* <div className="columns is-4" style={{ paddingTop: "1rem" }}>
+        <div className="column is-one-quarter">
+          <p className="has-background-white">{rocket.rocket.mission_name}</p>
+        </div>
+      </div> */}
+      <Column.Group vcentered gapSize={8}>
+        <Column size={4}>
+          <MissionView rocket={rocket} />
+        </Column>
+      </Column.Group>
+    </>
   );
 };
 
