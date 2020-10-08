@@ -1,6 +1,5 @@
 import React from "react";
-import "./App.css";
 
-const App = () => <div> SpaceX </div>;
+const App = () => <div color="primaryColor">S psd aceX </div>;
 
 export default App;
