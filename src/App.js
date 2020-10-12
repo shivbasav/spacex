@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   max-width: 960px;
   padding-right: 10px;
   padding-left: 10px;
-  display: flex;
 `;
 
 const App = () => {

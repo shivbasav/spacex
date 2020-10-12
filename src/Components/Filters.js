@@ -17,7 +17,12 @@ const Filters = () => (
     </div>
     <div className="columns is-1">
       <div className="column">
-        <button className="button is-primary is-small">2006</button>
+        <button
+          className="button is-primary is-small"
+          onClick={() => console.log("2006")}
+        >
+          2006
+        </button>
       </div>
       <div className="column">
         <button className="button is-primary is-small">2007</button>

@@ -24,7 +24,7 @@ const IndividualMission = (rocket) => {
           <p className="has-background-white">{rocket.rocket.mission_name}</p>
         </div>
       </div> */}
-      <Column.Group vcentered gapSize={8}>
+      <Column.Group vcentered multiline gapSize={8}>
         <Column size={4}>
           <MissionView rocket={rocket} />
         </Column>
