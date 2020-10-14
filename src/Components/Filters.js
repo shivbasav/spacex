@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import LaunchFilter from "./SuccessfulLaunchFilter";
+import LandingFilter from "./SuccessfulLandingFilter";
 
 const Container = styled.div`
   &&&& {
@@ -60,6 +62,11 @@ const Filters = () => (
         <button className="button is-primary is-small">2015</button>
       </div>
     </div>
+    {/* Successful Launch */}
+    <LaunchFilter />
+
+    {/* Successful Landing */}
+    <LandingFilter />
   </Container>
 );
 
